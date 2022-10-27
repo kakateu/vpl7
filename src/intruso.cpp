@@ -15,14 +15,14 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 	// Pega entrada e retira os espacos
 	for (uint i = 0; i < vazou.size(); i++) {
-		std::cout << "Vazou: " << vazou[i] << "\r\n";
+		// std::cout << "Vazou: " << vazou[i] << "\r\n";
 
 		if (vazou[i] != ' ') {
 			aux_vazou = aux_vazou + vazou[i];
 		};
 	};
 
-	std::cout << aux_vazou << "\r\n";
+	// std::cout << aux_vazou << "\r\n";
 
 	// Pega a relacao de numeros da entrada sem espacos
 	for (int i = 0; i < 10; i++) {
@@ -31,7 +31,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		};
 	};
 
-	std::cout << aux_numeros << "\r\n";
+	// std::cout << aux_numeros << "\r\n";
 
 	// Pega as letras digitadas
 	for (int i = 10; i < 16; i++) {
@@ -40,7 +40,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		};
 	};
 
-	std::cout << aux_digitos << "\r\n";
+	// std::cout << aux_digitos << "\r\n";
 
 	// Add a lista de letras digitadas na lista de senhas digitadas
 	lista_senhas_digitadas.push_back(aux_digitos);
@@ -60,9 +60,9 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	relacao_letras_numeros.insert(std::pair<char, char>('E', aux_numeros[i++]));
 
 	// Print para teste
-	for (itr = relacao_letras_numeros.begin(); itr != relacao_letras_numeros.end(); ++itr) {
-		std::cout << itr->first << " " << itr->second << "\r\n";
-	};
+	// for (itr = relacao_letras_numeros.begin(); itr != relacao_letras_numeros.end(); ++itr) {
+	// 	std::cout << itr->first << " " << itr->second << "\r\n";
+	// };
 
 	// Add o multimap na lista de relacao de letras e numeros
 	lista_relacao_letras_numeros.push_back(relacao_letras_numeros);
@@ -75,17 +75,35 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 std::string Intruso::crack_senha() {
 	std::multimap<char, char>::iterator itr;
+	std::multimap<char, char>::iterator itr1;
 	std::list<std::multimap<char, char>>::iterator itr2;
+	std::list<std::multimap<char, char>>::iterator itr3;
 
 	std::cout << "Print da lista com as relacoes \r\n";
 
+	// itr3 = lista_relacao_letras_numeros.begin();
+	// itr3++;
+
 	for (itr2 = lista_relacao_letras_numeros.begin(); itr2 != lista_relacao_letras_numeros.end(); ++itr2) {
 		for (itr = itr2->begin(); itr != itr2->end(); ++itr) {
-			std::cout << itr->first << " " << itr->second << "\r\n";
-		};
+			itr3 = itr2;
+			if (itr != itr2->end()) {
+				itr3++;
+			}
+			// std::cout << itr->first << " " << itr->second << "\r\n";
+			for (itr1 = itr3->begin(); itr1 != itr3->end(); ++itr1) {
+				// std::cout << itr->first << " " << itr->second << "\r\n";
+				// std::cout << itr1->first << " " << itr1->second << "\r\n";
+				if (itr->second == itr1->second) {
+					std::cout << itr->first << itr->second << "\r\n";
+					std::cout << itr1->first << itr1->second << "\r\n";
+				}
+			}
+			// std::cout << itr->first << " " << itr->second << "\r\n";
+		}
 
 		std::cout << "\r\n";
-	};
+	}
 
 	return "0";
-};
+}
