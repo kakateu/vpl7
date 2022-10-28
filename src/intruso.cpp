@@ -15,7 +15,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	// std::multimap<char, char>::iterator itr;
 
 	// Pega entrada e retira os espacos
-	for (uint i = 0; i < vazou.size(); i++) {
+	for (int i = 0; i < vazou.size(); i++) {
 		// std::cout << "Vazou: " << vazou[i] << "\r\n";
 
 		if (vazou[i] != ' ') {
@@ -128,7 +128,7 @@ std::string Intruso::crack_senha() {
 
 	std::vector<std::string> aux_senha = lista_relacao_letras_numeros[0];
 
-	for (uint i = 0; i < lista_relacao_letras_numeros.size(); i++) {
+	for (int i = 0; i < lista_relacao_letras_numeros.size(); i++) {
 		for (uint j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
 			std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
 		}
@@ -141,9 +141,9 @@ std::string Intruso::crack_senha() {
 	// int k = 0;
 	// int l = 0;
 
-	for (uint i = 1; i < lista_relacao_letras_numeros.size(); i++) {
+	for (int i = 1; i < lista_relacao_letras_numeros.size(); i++) {
 		// std::cout << "Rodou for i!\r\n";
-		for (uint j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
+		for (int j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
 			// std::cout << "Rodou for j!\r\n";
 			for (uint k = 0; k < aux_senha[i].size(); k++) {
 				// std::cout << "Rodou for l!\r\n";
