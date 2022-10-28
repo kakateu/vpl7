@@ -138,26 +138,32 @@ std::string Intruso::crack_senha() {
 
 	std::cout << "teste\r\n";
 
-	int k = 0;
-	int l = 0;
+	// int k = 0;
+	// int l = 0;
 
 	for (uint i = 1; i < lista_relacao_letras_numeros.size(); i++) {
-		std::cout << "Rodou for i!\r\n";
+		// std::cout << "Rodou for i!\r\n";
 		for (uint j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
-			std::cout << "Rodou for j!\r\n";
-			if (aux_senha[k][0] == lista_relacao_letras_numeros[i][j][0]) {
-				// 		// if ((aux_senha[k][1] == lista_relacao_letras_numeros[i + 1][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i + 1][j][2])) {
-				// 		// 	std::cout << "Os dois numeros sao iguais!";
-				// 		// } else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i + 1][j][1]) && (aux_senha[k][2] != lista_relacao_letras_numeros[i + 1][j][2])) {
-				// 		// 	std::cout << "O segundo numero e igual!";
-				// 		// 	// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				// 		// } else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i + 1][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i + 1][j][2])) {
-				// 		// 	std::cout << "O segundo numero e igual!";
-				// 		// 	// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				// 		// }
-				std::cout << "Letra igual!\r\n";
-				k++;
+			// std::cout << "Rodou for j!\r\n";
+			for (uint k = 0; k < aux_senha[i].size(); k++) {
+				// std::cout << "Rodou for l!\r\n";
+				// for (uint m = 0; m < lista_relacao_letras_numeros[i][j].size(); m++) {
+
+				std::cout << "Comparacao: " << aux_senha[k] << " e " << lista_relacao_letras_numeros[i][j] << "\r\n";
+
+				if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][2])) {
+					std::cout << "Os dois numeros sao iguais!\r\n";
+				} else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] != lista_relacao_letras_numeros[i][j][2])) {
+					std::cout << "O segundo numero e igual!\r\n";
+					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+				} else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][2])) {
+					std::cout << "O segundo numero e igual!\r\n";
+					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+				}
+				// }
+				// k++;
 			}
+			// k++;
 		}
 	}
 
