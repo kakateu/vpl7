@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main() {
+	std:: cout << "foi" << std::endl;
 	int num_entradas, i;
 	std::string senha;
 	Intruso intruso;
