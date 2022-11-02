@@ -49,53 +49,106 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	// int j = 0;
 	int i = 0;
 
+	for (int i = 0; i < aux_digitos.size(); i++) {
+		char c;
+
+		c = aux_digitos[i];
+
+		// std::cout << "Letra: " << c << "\r\n";
+
+		switch (c) {
+			case 'A':
+				// aux_relacao_letras_numeros = aux_digitos[i] + (char)aux_numeros[0] + (char)aux_numeros[1];
+				aux_relacao_letras_numeros = aux_digitos[i];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[0];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[1];
+				break;
+			case 'B':
+				// aux_relacao_letras_numeros = aux_digitos[i] + (char)aux_numeros[2] + (char)aux_numeros[3];
+				aux_relacao_letras_numeros = aux_digitos[i];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[2];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[3];
+				break;
+			case 'C':
+				// aux_relacao_letras_numeros = aux_digitos[i] + (char)aux_numeros[4] + (char)aux_numeros[5];
+				aux_relacao_letras_numeros = aux_digitos[i];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[4];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[5];
+				break;
+			case 'D':
+				// aux_relacao_letras_numeros = aux_digitos[i] + (char)aux_numeros[6] + (char)aux_numeros[7];
+				aux_relacao_letras_numeros = aux_digitos[i];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[6];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[7];
+				break;
+			case 'E':
+				// aux_relacao_letras_numeros = aux_digitos[i] + (char)aux_numeros[8] + (char)aux_numeros[9];
+				aux_relacao_letras_numeros = aux_digitos[i];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[8];
+				aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[9];
+				break;
+			default:
+				std::cout << "Entrou default";
+				break;
+		}
+
+		// std::cout << "String: " << aux_relacao_letras_numeros << "\r\n";
+
+		if (aux_relacao_letras_numeros != "") {
+			relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+			aux_relacao_letras_numeros = "";
+		} else {
+			std::cout << "Relacao vazia";
+		}
+	}
+
 	// for (int i = 0; i < aux_digitos.size(); i++) {
 	// 	if(aux_digitos[i])
 	// }
 
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'A' + aux_numeros[i++];
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'A' + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
 
-	std::cout << "A: " << aux_relacao_letras_numeros << "\r\n";
+	// std::cout << "A: " << aux_relacao_letras_numeros << "\r\n";
 
-	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
-	aux_relacao_letras_numeros = "";
+	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+	// // j++;
+	// aux_relacao_letras_numeros = "";
 
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'B' + aux_numeros[i++];
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'B' + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
 
-	std::cout << "B: " << aux_relacao_letras_numeros << "\r\n";
+	// std::cout << "B: " << aux_relacao_letras_numeros << "\r\n";
 
-	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
-	aux_relacao_letras_numeros = "";
+	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+	// // j++;
+	// aux_relacao_letras_numeros = "";
 
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'C' + aux_numeros[i++];
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'C' + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
 
-	std::cout << "C: " << aux_relacao_letras_numeros << "\r\n";
+	// std::cout << "C: " << aux_relacao_letras_numeros << "\r\n";
 
-	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
-	aux_relacao_letras_numeros = "";
+	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+	// // j++;
+	// aux_relacao_letras_numeros = "";
 
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'D' + aux_numeros[i++];
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'D' + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
 
-	std::cout << "D: " << aux_relacao_letras_numeros << "\r\n";
+	// std::cout << "D: " << aux_relacao_letras_numeros << "\r\n";
 
-	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
-	aux_relacao_letras_numeros = "";
+	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+	// // j++;
+	// aux_relacao_letras_numeros = "";
 
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'E' + aux_numeros[i++];
-	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'E' + aux_numeros[i++];
+	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
 
-	std::cout << "E: " << aux_relacao_letras_numeros << "\r\n";
+	// std::cout << "E: " << aux_relacao_letras_numeros << "\r\n";
 
-	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	aux_relacao_letras_numeros = "";
+	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
+	// aux_relacao_letras_numeros = "";
 	// j++;
 
 	// Popula o multimap com a relacao de letras e numeros da entrada
