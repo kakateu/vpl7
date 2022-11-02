@@ -11,7 +11,6 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	// Pega entrada e retira os espacos
 	for (int i = 0; i < vazou.size(); i++) {
 		// std::cout << "Vazou: " << vazou[i] << "\r\n";
-
 		if (vazou[i] != ' ') {
 			aux_vazou = aux_vazou + vazou[i];
 		};
@@ -37,6 +36,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 	// std::cout << aux_digitos << "\r\n";
 
+	// Olha todas as letras da senha digitada e junta com os digitos numa string
 	for (int i = 0; i < aux_digitos.size(); i++) {
 		char c;
 
@@ -82,6 +82,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 		// std::cout << "String: " << aux_relacao_letras_numeros << "\r\n";
 
+		// Caso a string nao esteja vazia, da um push_back no vetor de strings
 		if (aux_relacao_letras_numeros != "") {
 			relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
 			aux_relacao_letras_numeros = "";
@@ -90,7 +91,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		}
 	}
 
-	// Add o multimap na lista de relacao de letras e numeros
+	// Add o vetor de strings no vetor de vetor de string
 	lista_relacao_letras_numeros.push_back(relacao_letras_numeros);
 
 	// std::cout << "Adicionou uma nova senha vazada a lista \r\n";
@@ -98,9 +99,13 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 std::string Intruso::crack_senha() {
 
+	// Senha final sem espacos
 	std::string senha_crakeada = "      ";
+
+	// Senha final com espacos
 	std::string senha_crakeada_final = "";
 
+	// Pega a primeira relacao de letras e digitos
 	std::vector<std::string> aux_senha = lista_relacao_letras_numeros[0];
 
 	// for (int i = 0; i < lista_relacao_letras_numeros.size(); i++) {
@@ -111,10 +116,14 @@ std::string Intruso::crack_senha() {
 	// 	std::cout << "\r\n";
 	// }
 
+	// Percorre o vetor de vetor de strings
 	for (int i = 1; i < lista_relacao_letras_numeros.size(); i++) {
+		// Percorre cada digito do vetor de strings
 		for (int k = 0; k < aux_senha.size(); k++) {
 			// std::cout << "Comparacao: " << aux_senha[k] << " e " << lista_relacao_letras_numeros[i][k] << "\r\n";
 
+			// Caso os dois digitos sejam iguais, nao faz nada.
+			// Caso somente um seja igual, adiciona ele na posicao pesquisada em aux_senha
 			if (((aux_senha[k][1] == lista_relacao_letras_numeros[i][k][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][2])) ||
 				((aux_senha[k][1] == lista_relacao_letras_numeros[i][k][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][1]))) {
 				// std::cout << "Os dois numeros sao iguais!\r\n";
@@ -140,11 +149,13 @@ std::string Intruso::crack_senha() {
 
 	// std::cout << "Senha: " << senha_crakeada << "\r\n";
 
+	// Adiciona os espacos na senha final
 	for (int i = 0; i < senha_crakeada.size(); i++) {
 		senha_crakeada_final = senha_crakeada_final + senha_crakeada[i];
 		senha_crakeada_final = senha_crakeada_final + ' ';
 	}
 
+	// Remove o ultimo espaco adicionado
 	senha_crakeada_final.pop_back();
 
 	return senha_crakeada_final;
