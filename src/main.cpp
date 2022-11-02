@@ -32,8 +32,6 @@ int main() {
 
 		std::getline(std::cin, senha);
 
-		// std::cout << "Senha digitada: " << senha << "\r\n";
-
 		intruso.set_senha_vazada(senha);
 	};
 
