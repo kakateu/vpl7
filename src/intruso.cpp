@@ -1,18 +1,12 @@
 #include "intruso.hpp"
 #include <iostream>
 
-// SenhaVazada::SenhaVazada(std::string numeros, std::string digitos) {
-// 	_numeros = numeros;
-// 	_digitos = digitos;
-// };
-
 void Intruso::set_senha_vazada(std::string vazou) {
 	std::string aux_vazou;
 	std::string aux_numeros;
 	std::string aux_digitos;
 	std::string aux_relacao_letras_numeros;
 	std::vector<std::string> relacao_letras_numeros;
-	// std::multimap<char, char>::iterator itr;
 
 	// Pega entrada e retira os espacos
 	for (int i = 0; i < vazou.size(); i++) {
@@ -36,18 +30,12 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 	// Pega as letras digitadas
 	for (int i = 10; i < 16; i++) {
-		if (aux_vazou[i] != ' ') { //  || aux_vazou[i] != '\0'
+		if (aux_vazou[i] != ' ') {
 			aux_digitos = aux_digitos + aux_vazou[i];
 		};
 	};
 
 	// std::cout << aux_digitos << "\r\n";
-
-	// Add a lista de letras digitadas na lista de senhas digitadas
-	// lista_senhas_digitadas.push_back(aux_digitos);
-
-	// int j = 0;
-	// int i = 0;
 
 	for (int i = 0; i < aux_digitos.size(); i++) {
 		char c;
@@ -102,77 +90,8 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		}
 	}
 
-	// for (int i = 0; i < aux_digitos.size(); i++) {
-	// 	if(aux_digitos[i])
-	// }
-
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'A' + aux_numeros[i++];
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
-
-	// std::cout << "A: " << aux_relacao_letras_numeros << "\r\n";
-
-	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// // j++;
-	// aux_relacao_letras_numeros = "";
-
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'B' + aux_numeros[i++];
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
-
-	// std::cout << "B: " << aux_relacao_letras_numeros << "\r\n";
-
-	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// // j++;
-	// aux_relacao_letras_numeros = "";
-
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'C' + aux_numeros[i++];
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
-
-	// std::cout << "C: " << aux_relacao_letras_numeros << "\r\n";
-
-	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// // j++;
-	// aux_relacao_letras_numeros = "";
-
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'D' + aux_numeros[i++];
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
-
-	// std::cout << "D: " << aux_relacao_letras_numeros << "\r\n";
-
-	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// // j++;
-	// aux_relacao_letras_numeros = "";
-
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'E' + aux_numeros[i++];
-	// aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
-
-	// std::cout << "E: " << aux_relacao_letras_numeros << "\r\n";
-
-	// relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// aux_relacao_letras_numeros = "";
-	// j++;
-
-	// Popula o multimap com a relacao de letras e numeros da entrada
-	// relacao_letras_numeros.insert(std::pair<char, char>('A', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('A', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('B', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('B', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('C', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('C', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('D', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('D', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('E', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('E', aux_numeros[i++]));
-
-	// Print para teste
-	// for (itr = relacao_letras_numeros.begin(); itr != relacao_letras_numeros.end(); ++itr) {
-	// 	std::cout << itr->first << " " << itr->second << "\r\n";
-	// };
-
 	// Add o multimap na lista de relacao de letras e numeros
 	lista_relacao_letras_numeros.push_back(relacao_letras_numeros);
-
-	// Limpa o multimap utilizado
-	// relacao_letras_numeros.clear();
 
 	std::cout << "Adicionou uma nova senha vazada a lista \r\n";
 };
