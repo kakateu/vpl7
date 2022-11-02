@@ -99,6 +99,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 std::string Intruso::crack_senha() {
 
 	std::string senha_crakeada = "      ";
+	std::string senha_crakeada_final = "";
 
 	std::vector<std::string> aux_senha = lista_relacao_letras_numeros[0];
 
@@ -139,5 +140,12 @@ std::string Intruso::crack_senha() {
 
 	// std::cout << "Senha: " << senha_crakeada << "\r\n";
 
-	return senha_crakeada;
+	for (int i = 0; i < senha_crakeada.size(); i++) {
+		senha_crakeada_final = senha_crakeada_final + senha_crakeada[i];
+		senha_crakeada_final = senha_crakeada_final + ' ';
+	}
+
+	senha_crakeada_final.pop_back();
+
+	return senha_crakeada_final;
 }
