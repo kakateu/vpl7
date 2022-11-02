@@ -47,7 +47,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	lista_senhas_digitadas.push_back(aux_digitos);
 
 	// int j = 0;
-	int i = 0;
+	// int i = 0;
 
 	for (int i = 0; i < aux_digitos.size(); i++) {
 		char c;
@@ -179,10 +179,13 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 std::string Intruso::crack_senha() {
 
+	std::string senha_crakeada = "";
+	// std::vector<char> senha_crakeada;
+
 	std::vector<std::string> aux_senha = lista_relacao_letras_numeros[0];
 
-	std::string aux_senha_digitada0 = lista_senhas_digitadas[0];
-	std::string aux_senha_digitada1 = lista_senhas_digitadas[1];
+	// std::string aux_senha_digitada0 = lista_senhas_digitadas[0];
+	// std::string aux_senha_digitada1 = lista_senhas_digitadas[1];
 
 	for (int i = 0; i < lista_relacao_letras_numeros.size(); i++) {
 		for (int j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
@@ -194,38 +197,68 @@ std::string Intruso::crack_senha() {
 
 	// std::cout << "teste\r\n";
 
+	int j = 0;
+
 	for (int i = 1; i < lista_relacao_letras_numeros.size(); i++) {
 		// std::cout << "Rodou for i!\r\n";
 		for (int k = 0; k < aux_senha.size(); k++) {
 			// std::cout << "Rodou for k!\r\n";
-			for (int j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
-				// std::cout << "Rodou for j!\r\n";
-				std::cout << "Comparacao: " << aux_senha[k] << " e " << lista_relacao_letras_numeros[i][j] << "\r\n";
+			// for (int j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
+			// std::cout << "Rodou for j!\r\n";
+			std::cout << "Comparacao: " << aux_senha[k] << " e " << lista_relacao_letras_numeros[i][k] << "\r\n";
 
-				// if (aux_senha[k][0] == 'A')
+			// if (aux_senha[k][0] == 'A')
 
-				if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][2])) {
-					std::cout << "Os dois numeros sao iguais!\r\n";
-				} else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][1])) {
-					std::cout << "Os dois numeros sao iguais!\r\n";
-				} else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] != lista_relacao_letras_numeros[i][j][2])) {
-					std::cout << "Primeiro igual ao primeiro!\r\n";
-					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				} else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][2])) {
-					std::cout << "Segundo igual ao segundo!\r\n";
-					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				} else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i][j][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][1])) {
-					std::cout << "Segundo igual ao primeiro!\r\n";
-					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				} else if ((aux_senha[k][2] != lista_relacao_letras_numeros[i][j][1]) && (aux_senha[k][1] == lista_relacao_letras_numeros[i][j][2])) {
-					std::cout << "Primeiro igual ao segundo!\r\n";
-					// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
-				} else {
-					std::cout << "Os dois sao diferentes!\r\n";
-				}
+			if (((aux_senha[k][1] == lista_relacao_letras_numeros[i][k][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][2])) ||
+				((aux_senha[k][1] == lista_relacao_letras_numeros[i][k][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][1]))) {
+				std::cout << "Os dois numeros sao iguais!\r\n";
+				break;
+				// } else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][j][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][j][1])) {
+				// std::cout << "Os dois numeros sao iguais!\r\n";
+			} else if ((aux_senha[k][1] == lista_relacao_letras_numeros[i][k][1]) && (aux_senha[k][2] != lista_relacao_letras_numeros[i][k][2])) {
+				std::cout << "Primeiro igual ao primeiro!\r\n";
+				// senha_crakeada[j++] = aux_senha[k][1];
+				senha_crakeada = senha_crakeada + aux_senha[k][1];
+				// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+			} else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i][k][1]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][2])) {
+				std::cout << "Segundo igual ao segundo!\r\n";
+				// senha_crakeada[j++] = aux_senha[k][2];
+				senha_crakeada = senha_crakeada + aux_senha[k][2];
+				// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+			} else if ((aux_senha[k][1] != lista_relacao_letras_numeros[i][k][2]) && (aux_senha[k][2] == lista_relacao_letras_numeros[i][k][1])) {
+				std::cout << "Segundo igual ao primeiro!\r\n";
+				// senha_crakeada[j++] = aux_senha[k][2];
+				senha_crakeada = senha_crakeada + aux_senha[k][2];
+				// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+			} else if ((aux_senha[k][2] != lista_relacao_letras_numeros[i][k][1]) && (aux_senha[k][1] == lista_relacao_letras_numeros[i][k][2])) {
+				std::cout << "Primeiro igual ao segundo!\r\n";
+				// senha_crakeada[j++] = aux_senha[k][1];
+				senha_crakeada = senha_crakeada + aux_senha[k][1];
+				// std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+			} else {
+				std::cout << "Os dois sao diferentes!\r\n";
 			}
+
+			// std::cout << "Senha parcial: ";
+			// for (int m = 0; i < senha_crakeada.size(); m++) {
+			// 	std::cout << senha_crakeada[m];
+			// }
+			// std::cout << "\r\n";
+
+			std::cout << "Senha parcial: " << senha_crakeada << "\r\n";
+			// }
 		}
 	}
+
+	// senha_crakeada[j++] = '\0';
+
+	std::cout << "Senha: " << senha_crakeada << "\r\n";
+
+	// std::cout << "\r\n";
+	// return senha_crakeada;
+	return "0";
+
+	// std::cout << "Senha: " << senha_crakeada << "\r\n";
 
 	// int init = 0;
 	// int proximo = 1;
@@ -284,7 +317,4 @@ std::string Intruso::crack_senha() {
 
 	// 	std::cout << "\r\n";
 	// }
-
-	std::cout << "\r\n";
-	return "0";
 }
