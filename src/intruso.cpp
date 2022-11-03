@@ -23,16 +23,12 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		};
 	};
 
-	// std::cout << aux_vazou << "\r\n";
-
 	// Pega a relacao de numeros da entrada sem espacos
 	for (int i = 0; i < 10; i++) {
 		if (aux_vazou[i] != ' ') {
 			aux_numeros = aux_numeros + aux_vazou[i];
 		};
 	};
-
-	// std::cout << aux_numeros << "\r\n";
 
 	// Pega as letras digitadas
 	for (int i = 10; i < 16; i++) {
