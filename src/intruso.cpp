@@ -49,9 +49,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	// int j = 0;
 	int i = 0;
 
-	// for (int i = 0; i < aux_digitos.size(); i++) {
-	// 	if(aux_digitos[i])
-	// }
+	
 
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'A' + aux_numeros[i++];
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + aux_numeros[i++];
@@ -59,7 +57,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	std::cout << "A: " << aux_relacao_letras_numeros << "\r\n";
 
 	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
+	
 	aux_relacao_letras_numeros = "";
 
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'B' + aux_numeros[i++];
@@ -68,7 +66,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	std::cout << "B: " << aux_relacao_letras_numeros << "\r\n";
 
 	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
+	
 	aux_relacao_letras_numeros = "";
 
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'C' + aux_numeros[i++];
@@ -77,7 +75,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	std::cout << "C: " << aux_relacao_letras_numeros << "\r\n";
 
 	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
+	
 	aux_relacao_letras_numeros = "";
 
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'D' + aux_numeros[i++];
@@ -86,7 +84,7 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	std::cout << "D: " << aux_relacao_letras_numeros << "\r\n";
 
 	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
-	// j++;
+	
 	aux_relacao_letras_numeros = "";
 
 	aux_relacao_letras_numeros = aux_relacao_letras_numeros + 'E' + aux_numeros[i++];
