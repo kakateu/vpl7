@@ -6,13 +6,13 @@ SRCDIR := src
 TARGET := main.out
 
 all: clean main
-	$(CC) $(FLAGS) $(LFLAGS) $(BUILDDIR)/*.o -o $(BUILDDIR)/$(TARGET)
+	$(CC) $(FLAGS) $(LFLAGS) *.o -o $(TARGET)
 
 main: intruso
-	$(CC) $(FLAGS) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
+	$(CC) $(FLAGS) -c main.cpp -o main.o
 
 intruso: 
-	$(CC) $(FLAGS) -c $(SRCDIR)/intruso.cpp -o $(BUILDDIR)/intruso.o
+	$(CC) $(FLAGS) -c intruso.cpp -o intruso.o
 
 clean:
 	rm -rf build/*
