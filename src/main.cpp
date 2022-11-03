@@ -10,7 +10,6 @@ int main() {
 	std::cin >> num_entradas;
 	std::cin.ignore();
 
-
 	for (i = 0; i < num_entradas; i++) {
 
 		std::getline(std::cin, senha);
