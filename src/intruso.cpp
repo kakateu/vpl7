@@ -41,8 +41,6 @@ void Intruso::set_senha_vazada(std::string vazou) {
 		};
 	};
 
-	// std::cout << aux_digitos << "\r\n";
-
 	// Add a lista de letras digitadas na lista de senhas digitadas
 	lista_senhas_digitadas.push_back(aux_digitos);
 
