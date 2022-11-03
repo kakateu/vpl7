@@ -100,9 +100,6 @@ void Intruso::set_senha_vazada(std::string vazou) {
 	// Add o multimap na lista de relacao de letras e numeros
 	lista_relacao_letras_numeros.push_back(relacao_letras_numeros);
 
-	// Limpa o multimap utilizado
-	// relacao_letras_numeros.clear();
-
 	std::cout << "Adicionou uma nova senha vazada a lista \r\n";
 };
 
