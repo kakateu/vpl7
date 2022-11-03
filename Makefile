@@ -6,7 +6,7 @@ SRCDIR := src
 TARGET := main.out
 
 all: clean main
-	$(CC) $(FLAGS) $(LFLAGS) $(BUILDDIR)/*.o -o $(TARGET)
+	$(CC) $(FLAGS) $(LFLAGS) $(BUILDDIR)/*.o -o $(BUILDDIR)/$(TARGET)
 
 main: intruso
 	$(CC) $(FLAGS) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
