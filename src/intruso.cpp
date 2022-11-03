@@ -1,18 +1,13 @@
 #include "intruso.hpp"
 #include <iostream>
 
-// SenhaVazada::SenhaVazada(std::string numeros, std::string digitos) {
-// 	_numeros = numeros;
-// 	_digitos = digitos;
-// };
-
 void Intruso::set_senha_vazada(std::string vazou) {
 	std::string aux_vazou;
 	std::string aux_numeros;
 	std::string aux_digitos;
 	std::string aux_relacao_letras_numeros;
 	std::vector<std::string> relacao_letras_numeros;
-	// std::multimap<char, char>::iterator itr;
+	
 
 	// Pega entrada e retira os espacos
 	for (int i = 0; i < vazou.size(); i++) {
