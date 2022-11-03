@@ -103,18 +103,13 @@ void Intruso::set_senha_vazada(std::string vazou) {
 }
 
 std::string Intruso::crack_senha() {
-	std::multimap<char, char>::iterator itr;
-	std::list<std::multimap<char, char>>::iterator itr2;
 
-	std::cout << "Print da lista com as relacoes \r\n";
-
-	for (itr2 = lista_relacao_letras_numeros.begin(); itr2 != lista_relacao_letras_numeros.end(); ++itr2) {
-		for (itr = itr2->begin(); itr != itr2->end(); ++itr) {
-			std::cout << itr->first << " " << itr->second << "\r\n";
-		};
+	for (int i = 0; i < lista_relacao_letras_numeros.size(); i++) {
+		for (int j = 0; j < lista_relacao_letras_numeros[i].size(); j++) {
+			std::cout << lista_relacao_letras_numeros[i][j] << "\r\n";
+		}
 
 		std::cout << "\r\n";
-	};
-
+	}
 	return "0";
 };
