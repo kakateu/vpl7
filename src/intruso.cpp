@@ -96,24 +96,6 @@ void Intruso::set_senha_vazada(std::string vazou) {
 
 	relacao_letras_numeros.push_back(aux_relacao_letras_numeros);
 	aux_relacao_letras_numeros = "";
-	// j++;
-
-	// Popula o multimap com a relacao de letras e numeros da entrada
-	// relacao_letras_numeros.insert(std::pair<char, char>('A', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('A', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('B', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('B', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('C', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('C', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('D', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('D', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('E', aux_numeros[i++]));
-	// relacao_letras_numeros.insert(std::pair<char, char>('E', aux_numeros[i++]));
-
-	// Print para teste
-	// for (itr = relacao_letras_numeros.begin(); itr != relacao_letras_numeros.end(); ++itr) {
-	// 	std::cout << itr->first << " " << itr->second << "\r\n";
-	// };
 
 	// Add o multimap na lista de relacao de letras e numeros
 	lista_relacao_letras_numeros.push_back(relacao_letras_numeros);
